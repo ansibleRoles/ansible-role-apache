@@ -6,5 +6,6 @@
     dest=/etc/apache2/sites-available/{{ item.servername }}.conf
     owner=root group=root mode=644
   notify: Restart apache
+  sudo: yes
   with_items: lwiesel_apache_vhosts
   when: lwiesel_apache_vhosts != false
