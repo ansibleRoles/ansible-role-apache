@@ -1,0 +1,10 @@
+---
+
+- name: Add apache vhosts configurations
+  template:
+    src={{ lwiesel_vhost_conf_template }}
+    dest=/etc/apache2/sites-available/{{ item.servername }}.conf
+    owner=root group=root mode=644
+  notify: Restart apache
+  with_items: lwiesel_apache_vhosts
+  when: lwiesel_apache_vhosts != false

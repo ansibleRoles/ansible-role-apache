@@ -1,0 +1,20 @@
+---
+
+- name: Install base package
+  apt: pkg=apache2 state=present
+  sudo: yes
+
+- name: Install additional packages
+  apt: >
+    pkg={{ item }}
+    state=present
+    force=yes
+  with_items: lwiesel_apache_packages
+  sudo: yes
+  notify: Restart apache
+
+- name: Set php config
+  template: >
+    src={{ lwiesel_php_conf_template }}
+    dest=/etc/php5/apache2/conf.d/100-conf.ini
+  sudo: yes

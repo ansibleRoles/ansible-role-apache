@@ -1,0 +1,17 @@
+---
+
+dependencies: []
+
+galaxy_info:
+
+  author:              lwiesel
+  description:         A php role for debian
+  license:             MIT
+  min_ansible_version: 1.7.0
+  platforms:
+    - name: Debian
+  versions:
+    - wheezy
+  categories:
+    - development
+    - web

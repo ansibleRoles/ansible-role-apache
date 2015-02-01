@@ -1,0 +1,15 @@
+---
+
+- name: Enable apache module
+  command: a2enmod {{ item }}
+  sudo: yes
+  notify: Restart apache
+  with_items: lwiesel_apache_module_enable
+  when: lwiesel_apache_module_enable != false
+
+- name: Disable apache module
+  command: a2dismod {{ item }}
+  sudo: yes
+  notify: Restart apache
+  with_items: lwiesel_apache_module_disable
+  when: lwiesel_apache_module_disable != false
