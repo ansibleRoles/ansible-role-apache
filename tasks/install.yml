@@ -15,6 +15,6 @@
 
 - name: Set php config
   template: >
-    src={{ lwiesel_php_conf_template }}
+    src={{ lwiesel_apache_php_conf_template }}
     dest=/etc/php5/apache2/conf.d/100-conf.ini
   sudo: yes

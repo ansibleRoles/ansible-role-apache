@@ -13,7 +13,7 @@ lwiesel_apache_module_enable:
 lwiesel_apache_module_disable: []
 
 # php configuration
-lwiesel_php_conf_template: php.ini.j2
+lwiesel_apache_php_conf_template: php.ini.j2
 
 # Apache vhosts configuration
 lwiesel_apache_vhost_conf_template: vhost.conf.j2
