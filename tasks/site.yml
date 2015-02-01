@@ -1,14 +1,14 @@
 ---
 
 - name: Desactivate apache site
-  command: a2dissite {{ item }}
+  command: a2dissite {{ item }}.conf
   sudo: yes
   notify: Reload apache
   with_items: lwiesel_apache_site_disable
   when: lwiesel_apache_site_disable != false
 
 - name: Activate apache site
-  command: a2ensite {{ item }}
+  command: a2ensite {{ item }}.conf
   sudo: yes
   notify: Reload apache
   with_items: lwiesel_apache_site_enable
